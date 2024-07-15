@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">Buy/Sell</th>
+                <th class="text-end">Transaction Date/Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dict_item in stocks %}
+                    <tr>
+                        <td class="text-start">{{dict_item["symbol"]}}</td>
+                        <td class="text-end">{{dict_item["qty"]}}</td>
+                        <td class="text-end">${{dict_item["price"]}}</td>
+                        <td class="text-end">{{dict_item["transaction_type"]}}</td>
+                        <td class="text-end">{{dict_item["created_at"]}}</td>
+                    </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,91 @@
+# Harvard CS50X Problem Set Submission
+# Problem Set 8 - Trivia
+# By Joshua Lehman - May 12, 2024
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Which planet is known as the red planet?</h3>
+                <button id="venus">Venus</button>
+                <button id="jupiter">Jupiter</button>
+                <button id="mars">Mars</button>
+                <h4 id="answer"></h4>
+            </div>
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is the largest animal on earth?</h3>
+                <form>
+                    <input autocomplete="off" id="question" type="text">
+                    <button type="submit">Check Answer</button>
+                </form>
+                <h4 id="answerText"></h4>
+            </div>
+        </div>
+        <script>
+            let body = document.querySelector('body');
+            let venus = document.querySelector('#venus');
+            let jupiter = document.querySelector('#jupiter');
+            let mars = document.querySelector('#mars');
+            let answer = document.querySelector('#answer');
+
+            venus.addEventListener('click', function() {
+                venus.style.backgroundColor = 'red';
+                jupiter.style.backgroundColor = '#d9edff';
+                mars.style.backgroundColor = '#d9edff';
+                answer.innerHTML = "Incorrect";
+            })
+
+            jupiter.addEventListener('click', function() {
+                jupiter.style.backgroundColor = 'red';
+                mars.style.backgroundColor = '#d9edff';
+                venus.style.backgroundColor = '#d9edff';
+                answer.innerHTML = "Incorrect";
+            })
+
+            mars.addEventListener('click', function() {
+                mars.style.backgroundColor = 'green';
+                jupiter.style.backgroundColor = '#d9edff';
+                venus.style.backgroundColor = '#d9edff';
+                answer.innerHTML = "Correct";
+            })
+
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    let answer = document.querySelector('#question').value;
+                    let answerText = document.querySelector('#answerText');
+                    let question = document.querySelector('#question');
+
+
+                    if (answer == "Elephant"){
+                        answerText.innerHTML = "Correct";
+                        question.style.backgroundColor = 'green';
+                    } else if (answer !== "Elephant"){
+                        answerText.innerHTML = "Incorrect";
+                        question.style.backgroundColor = 'red';
+                    }
+
+                    console.log(answerText);
+
+
+                })
+            })
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+// Harvard CS50X Problem Set Submission
+// Problem Set 3 - Sort
+// By Joshua Lehman - April 30, 2024
+
+sort1 uses: Bubble sort
+
+How do you know?: 5.018s to sort a reversed list; Takes 0.647s to sort a sorted list.
+
+sort2 uses: Merge sort
+
+How do you know?: 0.535s to sort a reversed list; Takes 0.47s to sort a sorted list.
+
+sort3 uses: Selection sort
+
+How do you know?: 2.969s to sort a reversed list; Takes 2.500s to sort a sorted list.

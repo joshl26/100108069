@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Average Price</th>
+                <th class="text-end">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dict_item in stocks %}
+                {% if dict_item["qty"] > 0 %}
+                    <tr>
+                        <td class="text-start">{{dict_item["symbol"]}}</td>
+                        <td class="text-end">{{dict_item["qty"]}}</td>
+                        <td class="text-end">${{dict_item["price"]}}</td>
+                        <td class="text-end">${{dict_item["total"]}}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end">Cash</td>
+                <td class="border-0 text-end">{{cash}}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end">Total</td>
+                <td class="border-0 text-end">{{total}}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

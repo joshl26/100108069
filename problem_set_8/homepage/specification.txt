@@ -1,0 +1,13 @@
+# Harvard CS50X Problem Set Submission
+# Problem Set 8 - Homepage
+# By Joshua Lehman - June 5, 2024
+
+Q. Ten Distinct HTML tags used:
+A. head, body, main, header, footer, h1, h2, h3, h4 and p
+
+Q. Five Distinct CSS Properties used:
+A. font-family, font-weight, font-style, margin, padding
+
+Q. A brief (one-sentence) description of how you chose to use JavaScript and Bootstrap:
+A. I chose to use Javascript to dynamically insert a list of menu items from a JSON file
+and I used bootstrap for responsive styling.

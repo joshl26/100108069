@@ -1,0 +1,30 @@
+// Harvard CS50X Problem Set Submission
+// Problem Set 7 - Answers.txt
+// By Joshua Lehman - May 8, 2024
+
+Q. If songs.db contains the top 100 songs of one listener from 2018,
+how would you characterize their audio aura?
+
+A. Data can be mined from our songs database with the following statements:
+
+Energy = SELECT AVG(energy)
+FROM songs;
+
+Valence = SELECT AVG(valence)
+FROM songs;
+
+Danceability = SELECT AVG(danceability)
+FROM songs;
+
+Where Audio Aura = Energy + Valence + Danceability
+
+Q. Hypothesize about why the way you’ve calculated this aura might not
+be very representative of the listener. What better ways of calculating
+this aura would you propose?
+
+A. The way we calculated the audio aura does not take into account the actual
+playtime of these songs. If we had more data regarding the users listening
+habits we could make a better calculation of their Aura. i.e. Just because
+someone has a song in their playlist does not mean it was at the top of the
+most played. Perhaps adding another table that keeps track of how many times
+each song is played and factoring this into our equation.
